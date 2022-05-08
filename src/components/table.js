@@ -4,12 +4,13 @@ import TableBody from "./tableBody";
 
 export default class Table extends React.Component {
     render() {
-        
-        return (
-          <table>
-            <TableHeader />
-            <TableBody />
-          </table>
-        )
+      const {peopleData} = this.props
+
+      return (
+        <table>
+          <TableHeader />
+          <TableBody tableBodyData = {peopleData} />
+        </table>
+      )
       }
   }
