@@ -24,6 +24,16 @@ class App extends Component {
     ],
   }
 
+  removeCharacter = (index) => {
+    const {people} = this.state
+  
+    this.setState({
+      people: people.filter((person, i) => {
+        return i !== index
+      }),
+    })
+  }
+
   render(){
     const { people } = this.state
 
@@ -31,7 +41,7 @@ class App extends Component {
       <div className="">
         <h4>State in React</h4>
   
-        <Table peopleData = {people} />
+        <Table peopleData = {people} removeCharacter={this.removeCharacter}  />
       </div>
     );
   }
