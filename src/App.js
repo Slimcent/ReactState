@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Table from './components/table';
+import Form from './components/form';
 import './App.css';
 
 class App extends Component {
@@ -34,13 +35,18 @@ class App extends Component {
     })
   }
 
+  handleSubmit = people => {
+    this.setState({people: [...this.state.people, people]});
+  }
+
   render(){
     const { people } = this.state
 
     return (
       <div className="">
         <h4>State in React</h4>
-  
+
+        <Form handleSubmit = {this.handleSubmit} />
         <Table peopleData = {people} removeCharacter={this.removeCharacter}  />
       </div>
     );

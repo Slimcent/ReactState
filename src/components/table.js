@@ -12,5 +12,5 @@ export default class Table extends React.Component {
           <TableBody tableBodyData = {peopleData} removeCharacter={removeCharacter} />
         </table>
       )
-      }
+    }
   }
